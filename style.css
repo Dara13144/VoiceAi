@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --border-color: #ddd;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+header .subtitle {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+main {
+    padding: 20px;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+.language-selector {
+    margin-bottom: 20px;
+}
+
+.language-selector label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.language-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.language-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.text-input-area {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 16px;
+    resize: vertical;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 14px;
+    color: var(--secondary-color);
+    margin-top: 5px;
+}
+
+.voice-controls {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group:last-child {
+    margin-bottom: 0;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border-color);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+}
+
+.btn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn.primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn.primary:hover {
+    background: #357abd;
+}
+
+.btn.secondary {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.btn.secondary:hover {
+    background: #5a6268;
+}
+
+.btn.success {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn.success:hover {
+    background: #218838;
+}
+
+.btn.info {
+    background: var(--info-color);
+    color: white;
+}
+
+.btn.info:hover {
+    background: #138496;
+}
+
+.output-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid var(--border-color);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.audio-player {
+    margin-bottom: 20px;
+}
+
+.audio-player audio {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.download-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.status-message {
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.status-message.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-message.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.status-message.info {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--background-color);
+    color: var(--secondary-color);
+}
+
+footer .small {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+    .container {
+        border-radius: 15px;
+    }
+    
+    header {
+        padding: 20px 15px;
+    }
+    
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .download-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+    
+    select, textarea, input[type="range"] {
+        font-size: 16px;
+    }
+}
