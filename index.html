@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Text to Speech - Khmer & English</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="theme-color" content="#4a90e2">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📢 Text to Speech</h1>
+            <p class="subtitle">Support Khmer (ភាសាខ្មែរ) & English</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="language-selector">
+                    <label for="language">Select Language:</label>
+                    <select id="language" class="language-select">
+                        <option value="en">English</option>
+                        <option value="km">ភាសាខ្មែរ (Khmer)</option>
+                    </select>
+                </div>
+
+                <div class="text-input-area">
+                    <textarea 
+                        id="textInput" 
+                        placeholder="Enter text to convert to speech..."
+                        rows="6"
+                    ></textarea>
+                    <div class="char-counter">
+                        <span id="charCount">0</span> characters
+                    </div>
+                </div>
+
+                <div class="voice-controls">
+                    <div class="control-group">
+                        <label for="speed">Speed: <span id="speedValue">1.0x</span></label>
+                        <input type="range" id="speed" min="0.5" max="2.0" step="0.1" value="1.0">
+                    </div>
+                    <div class="control-group">
+                        <label for="pitch">Pitch: <span id="pitchValue">0</span></label>
+                        <input type="range" id="pitch" min="-20" max="20" step="1" value="0">
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="convertBtn" class="btn primary">
+                        <span class="icon">🔊</span> Convert to Speech
+                    </button>
+                    <button id="clearBtn" class="btn secondary">
+                        <span class="icon">🗑️</span> Clear
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section" id="outputSection" style="display: none;">
+                <div class="audio-player">
+                    <audio id="audioPlayer" controls></audio>
+                </div>
+                
+                <div class="download-options">
+                    <button id="downloadBtn" class="btn success">
+                        <span class="icon">📥</span> Download Audio
+                    </button>
+                    <button id="shareBtn" class="btn info">
+                        <span class="icon">📤</span> Share
+                    </button>
+                </div>
+
+                <div class="status-message" id="statusMessage"></div>
+            </div>
+
+            <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+                <div class="spinner"></div>
+                <p>Generating speech...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Supports Khmer and English text-to-speech</p>
+            <p class="small">Made for mobile and desktop</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
